@@ -27,11 +27,19 @@
     float: left;
     position: relative;
     overflow: hidden;
+    border-radius: 50%;
 
-    // Tip
-    shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+    overflow: hidden;
+
+    // Tip round text
+    @supports (clip-path: circle(0 0)) or (-webkit-clip-path: circle(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      border-radius: none;
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem) skew(0);
