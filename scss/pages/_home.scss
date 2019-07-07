@@ -17,6 +17,14 @@
   background-size: cover;
   margin-top: -10rem;
 
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+         (min-width: 2000px) {
+    background-image: linear-gradient(to right bottom,
+      rgba($color-secondary-light, 0.8),
+      rgba($color-secondary-dark, 0.8)),
+    url("../img/nat-4.jpg");
+  }
+
   // clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
   transform: skewY(-7deg);
 
